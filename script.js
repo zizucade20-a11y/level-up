@@ -29,3 +29,33 @@ goals.forEach(function(goal, index) {
     goalsList.appendChild(goalItem);
 
 });
+// Calculate daily progress
+function updateProgress() {
+
+    const checkboxes = document.querySelectorAll(
+        "#goals-list input[type='checkbox']"
+    );
+
+    const completed = document.querySelectorAll(
+        "#goals-list input[type='checkbox']:checked"
+    ).length;
+
+    const percentage = Math.round(
+        (completed / goals.length) * 100
+    );
+
+    document.getElementById("progress-number").textContent =
+        percentage + "%";
+
+    const message = document.getElementById("progress-message");
+
+    message.textContent =
+        percentage === 100
+            ? "Amazing! You completed every goal."
+            : "Keep going. Every step counts.";
+}
+
+// Listen for checkbox changes
+document.querySelectorAll("#goals-list input").forEach(function(checkbox) {
+    checkbox.addEventListener("change", updateProgress);
+});
