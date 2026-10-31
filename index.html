@@ -1,187 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>LEVEL UP | Personal Goals</title>
 
-    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- NAVIGATION BAR -->
     <header class="topbar">
-
-        <h2>LEVEL<span>UP.</span></h2>
+        <a href="#" class="logo">LEVEL<span>UP.</span></a>
 
         <nav>
             <a href="#dashboard">Dashboard</a>
-            <a href="#goals">Daily Goals</a>
+            <a href="#daily-goals">Daily Goals</a>
             <a href="#calendar">Calendar</a>
-            <a href="#review">Monthly Review</a>
+            <a href="#monthly-review">Monthly Review</a>
+            <a href="#history">History</a>
         </nav>
-
     </header>
 
+    <main class="container">
 
-    <!-- MAIN CONTENT -->
-    <main id="dashboard">
-
-        <!-- WELCOME SECTION -->
-        <section class="welcome">
-
-            <p class="small-heading">
-                YOUR PERSONAL GROWTH SPACE
-            </p>
-
-            <h1>
-                Become better.<br>
-                <span>Every single day.</span>
-            </h1>
-
-            <p>
-                Small steps. Daily discipline. Long-term progress.
-            </p>
-
-        </section>
-
-
-        <!-- DASHBOARD GRID -->
-        <section class="dashboard-grid">
-
-            <!-- DAILY GOALS CARD -->
-            <div class="card goals-card" id="goals">
-
-                <p class="small-heading">
-                    YOUR DAILY ROUTINE
+        <!-- DASHBOARD -->
+        <section class="hero" id="dashboard">
+            <div>
+                <p class="eyebrow">YOUR PERSONAL JOURNEY</p>
+                <h1>Become better.<br>Every single day.</h1>
+                <p class="hero-description">
+                    Small actions. Strong discipline. A better version of yourself.
                 </p>
-
-                <h2 id="goals-heading">
-                    Today's Goals
-                </h2>
-
-                <p>
-                    Show up for yourself today.
-                </p>
-
-                <!-- SELECT DATE -->
-                <div class="date-selector">
-
-                    <label for="selected-date">
-                        Select a date:
-                    </label>
-
-                    <input
-                        type="date"
-                        id="selected-date"
-                    >
-
-                </div>
-
-                <!-- JAVASCRIPT WILL DISPLAY GOALS HERE -->
-                <div id="goals-list"></div>
-
             </div>
 
+            <div class="hero-date">
+                <span>TODAY</span>
+                <h2 id="today-date">--</h2>
+            </div>
+        </section>
 
-            <!-- DAILY PROGRESS CARD -->
-            <div class="card progress-card">
+        <!-- DAILY GOALS -->
+        <section class="card daily-card" id="daily-goals">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR DAILY ROUTINE</p>
+                    <h2>Daily Goals</h2>
+                    <p>Show up for yourself, every day.</p>
+                </div>
 
-                <p class="small-heading">
-                    YOUR PROGRESS
-                </p>
+                <div class="date-control">
+                    <label for="selected-date">Choose a day</label>
+                    <input type="date" id="selected-date">
+                </div>
+            </div>
 
+            <div id="goals-list" class="goals-list"></div>
+        </section>
+
+        <!-- DAILY SCORE -->
+        <section class="score-card">
+            <div>
+                <p class="eyebrow">YOUR DAILY PERFORMANCE</p>
                 <h2>Daily Score</h2>
-
-                <div class="progress-circle">
-
-                    <span id="progress-number">
-                        0%
-                    </span>
-
-                </div>
-
-                <p id="progress-message">
-                    Your journey starts today.
-                </p>
-
+                <p id="score-message">Every completed goal is progress.</p>
             </div>
 
+            <div class="score-number">
+                <span id="progress-number">0%</span>
+                <div class="progress-track">
+                    <div id="progress-fill"></div>
+                </div>
+                <p id="completed-count">0 of 7 goals completed</p>
+            </div>
         </section>
 
-
-        <!-- CALENDAR SECTION -->
+        <!-- CALENDAR -->
         <section class="card calendar-card" id="calendar">
+            <div>
+                <p class="eyebrow">STAY CONSISTENT</p>
+                <h2>Your Calendar</h2>
+                <p>Track your discipline, one day at a time.</p>
+            </div>
 
-    <p class="small-heading">STAY CONSISTENT</p>
+            <div class="calendar-header">
+                <button id="prev-month" aria-label="Previous month">&larr;</button>
+                <h3 id="month-year">Month Year</h3>
+                <button id="next-month" aria-label="Next month">&rarr;</button>
+            </div>
 
-    <h2>Your Calendar</h2>
+            <div class="calendar-weekdays">
+                <span>Sun</span>
+                <span>Mon</span>
+                <span>Tue</span>
+                <span>Wed</span>
+                <span>Thu</span>
+                <span>Fri</span>
+                <span>Sat</span>
+            </div>
 
-    <p>Track your discipline, one day at a time.</p>
+            <div id="calendar-days" class="calendar-days"></div>
 
-    <!-- CALENDAR HEADER -->
-    <div class="calendar-header">
+            <div class="calendar-legend">
+                <span><i class="legend-dot selected-dot"></i> Selected day</span>
+                <span><i class="legend-dot completed-dot"></i> All goals completed</span>
+                <span><i class="legend-dot partial-dot"></i> Some progress</span>
+            </div>
 
-        <button id="prev-month">&lt;</button>
-
-        <h3 id="month-year">October 2026</h3>
-
-        <button id="next-month">&gt;</button>
-
-    </div>
-
-    <!-- DAYS OF THE WEEK -->
-    <div class="calendar-weekdays">
-        <span>Sun</span>
-        <span>Mon</span>
-        <span>Tue</span>
-        <span>Wed</span>
-        <span>Thu</span>
-        <span>Fri</span>
-        <span>Sat</span>
-    </div>
-
-    <!-- CALENDAR DATES WILL APPEAR HERE -->
-    <div id="calendar-days" class="calendar-days"></div>
-
-    <p id="calendar-message">
-        Select a date to review your progress.
-    </p>
-
-</section>
-
-
-        <!-- MONTHLY REVIEW SECTION -->
-        <section class="card review-card" id="review">
-
-            <p class="small-heading">
-                REFLECT AND IMPROVE
-            </p>
-
-            <h2>Monthly Review</h2>
-
-            <p>
-                Rate your discipline and reflect on your progress every month.
-            </p>
-
+            <p id="calendar-message">Select a date to review your progress.</p>
         </section>
+
+        <!-- MONTHLY REVIEW -->
+        <section class="card review-card" id="monthly-review">
+            <p class="eyebrow">REFLECT AND IMPROVE</p>
+            <h2>Monthly Review</h2>
+            <p>Rate your discipline and reflect on your progress every month.</p>
+
+            <div class="review-month">
+                <label for="review-month">Choose month</label>
+                <input type="month" id="review-month">
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <span>Days tracked</span>
+                    <strong id="days-tracked">0</strong>
+                </div>
+
+                <div class="stat-box">
+                    <span>Goals completed</span>
+                    <strong id="monthly-completed">0</strong>
+                </div>
+
+                <div class="stat-box">
+                    <span>Average progress</span>
+                    <strong id="monthly-average">0%</strong>
+                </div>
+            </div>
+
+            <div class="rating-section">
+                <label for="monthly-rating">How would you rate yourself this month?</label>
+
+                <div class="rating-control">
+                    <input type="range" id="monthly-rating" min="1" max="10" value="5">
+                    <strong><span id="rating-value">5</span>/10</strong>
+                </div>
+            </div>
+
+            <div class="reflection-section">
+                <label for="monthly-reflection">Your monthly reflection</label>
+                <textarea id="monthly-reflection" rows="5"
+                    placeholder="What went well? What could you improve next month?"></textarea>
+            </div>
+
+            <button id="save-review" class="primary-button">Save Monthly Review</button>
+            <p id="review-message" class="save-message"></p>
+        </section>
+
+        <!-- HISTORY -->
+        <section class="card history-card" id="history">
+            <p class="eyebrow">LOOK BACK</p>
+            <h2>Your Progress History</h2>
+            <p>See the days you have been working towards your goals.</p>
+
+            <div id="history-list" class="history-list">
+                <p class="empty-message">Your tracked days will appear here.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>LEVEL UP. &copy; <span id="footer-year"></span></p>
+            <p>Discipline is built one day at a time.</p>
+        </footer>
 
     </main>
 
-
-    <!-- JAVASCRIPT -->
     <script src="script.js"></script>
-
 </body>
-
 </html>
