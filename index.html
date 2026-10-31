@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>LEVEL UP | Personal Goals</title>
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
@@ -16,7 +19,9 @@
 
 <body>
 
+    <!-- NAVIGATION BAR -->
     <header class="topbar">
+
         <h2>LEVEL<span>UP.</span></h2>
 
         <nav>
@@ -25,53 +30,133 @@
             <a href="#calendar">Calendar</a>
             <a href="#review">Monthly Review</a>
         </nav>
+
     </header>
 
+
+    <!-- MAIN CONTENT -->
     <main id="dashboard">
 
+        <!-- WELCOME SECTION -->
         <section class="welcome">
-            <p class="small-heading">YOUR PERSONAL GROWTH SPACE</p>
-            <h1>Become better.<br><span>Every single day.</span></h1>
-            <p>Small steps. Daily discipline. Long-term progress.</p>
+
+            <p class="small-heading">
+                YOUR PERSONAL GROWTH SPACE
+            </p>
+
+            <h1>
+                Become better.<br>
+                <span>Every single day.</span>
+            </h1>
+
+            <p>
+                Small steps. Daily discipline. Long-term progress.
+            </p>
+
         </section>
 
+
+        <!-- DASHBOARD GRID -->
         <section class="dashboard-grid">
 
+            <!-- DAILY GOALS CARD -->
             <div class="card goals-card" id="goals">
-                <p class="small-heading">YOUR DAILY ROUTINE</p>
-                <h2>Today's Goals</h2>
-                <p>Show up for yourself today.</p>
 
+                <p class="small-heading">
+                    YOUR DAILY ROUTINE
+                </p>
+
+                <h2 id="goals-heading">
+                    Today's Goals
+                </h2>
+
+                <p>
+                    Show up for yourself today.
+                </p>
+
+                <!-- SELECT DATE -->
+                <div class="date-selector">
+
+                    <label for="selected-date">
+                        Select a date:
+                    </label>
+
+                    <input
+                        type="date"
+                        id="selected-date"
+                    >
+
+                </div>
+
+                <!-- JAVASCRIPT WILL DISPLAY GOALS HERE -->
                 <div id="goals-list"></div>
+
             </div>
 
+
+            <!-- DAILY PROGRESS CARD -->
             <div class="card progress-card">
-                <p class="small-heading">YOUR PROGRESS</p>
+
+                <p class="small-heading">
+                    YOUR PROGRESS
+                </p>
+
                 <h2>Daily Score</h2>
 
                 <div class="progress-circle">
-                    <span id="progress-number">0%</span>
+
+                    <span id="progress-number">
+                        0%
+                    </span>
+
                 </div>
 
-                <p id="progress-message">Your journey starts today.</p>
+                <p id="progress-message">
+                    Your journey starts today.
+                </p>
+
             </div>
 
         </section>
 
+
+        <!-- CALENDAR SECTION -->
         <section class="card calendar-card" id="calendar">
-            <p class="small-heading">STAY CONSISTENT</p>
+
+            <p class="small-heading">
+                STAY CONSISTENT
+            </p>
+
             <h2>Your Calendar</h2>
-            <p>Your daily progress will appear here.</p>
+
+            <p>
+                Your daily progress will appear here.
+            </p>
+
         </section>
 
+
+        <!-- MONTHLY REVIEW SECTION -->
         <section class="card review-card" id="review">
-            <p class="small-heading">REFLECT AND IMPROVE</p>
+
+            <p class="small-heading">
+                REFLECT AND IMPROVE
+            </p>
+
             <h2>Monthly Review</h2>
-            <p>Rate your discipline and reflect on your progress every month.</p>
+
+            <p>
+                Rate your discipline and reflect on your progress every month.
+            </p>
+
         </section>
 
     </main>
 
+
+    <!-- JAVASCRIPT -->
     <script src="script.js"></script>
+
 </body>
+
 </html>

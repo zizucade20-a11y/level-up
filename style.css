@@ -172,3 +172,33 @@ nav a:hover {
         padding: 25px;
     }
 }
+/* DATE SELECTOR */
+.date-selector {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.date-selector label {
+    font-size: 13px;
+    color: #888;
+}
+
+.date-selector input {
+    width: 100%;
+    max-width: 220px;
+    padding: 12px;
+    border: 1px solid #e6e5e2;
+    border-radius: 12px;
+    background-color: #f1f0ee;
+    color: #0a0a0a;
+    font-family: 'Onest', sans-serif;
+    font-size: 14px;
+    outline: none;
+}
+
+.date-selector input:focus {
+    border-color: #b15f2c;
+}
