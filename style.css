@@ -612,3 +612,6 @@ footer p:first-child {
         font-size: 11px;
     }
 }
+body {
+    background: red !important;
+}
